@@ -1,31 +1,4 @@
-.main-wrapper {
-  background-color: var(--color-bg);
-  border-radius: 60px;
-  min-width: 320px;
-  max-width: 1920px;
-  min-height: 800px;
-  margin: 0 auto;
-  margin-left: auto;
-  overflow: hidden;
-  font-family: var(--font-montserrat);
-  /* margin-left: 244px; */
-}
-a {
-  color: var(--color-orange);
-}
-.glow {
-  animation: subtle-glow 3.2s ease-in-out infinite;
-}
-
-@keyframes subtle-glow {
-  0%,
-  100% {
-    filter: brightness(1) saturate(1);
-  }
-  50% {
-    filter: brightness(1.15) saturate(1.08);
-  }
-}
+/* Блоки закомментирывана для perfext pixel оставь их */
 /* body::before {
   content: "";
   z-index: 100;
@@ -68,56 +41,66 @@ a {
   left: 118px;
   overflow: hidden;
 } */
-.btn--orange {
-  border-radius: 20px;
-  gap: 10px;
-  padding-top: 20px;
-  padding-right: 60px;
-  padding-bottom: 20px;
-  padding-left: 60px;
-  background-color: var(--color-orange);
-  max-width: 352px;
-  /* min-width: 288px; */
-  color: #191e1f;
-  font-weight: 700;
-  font-style: Bold;
-  font-size: 20px;
-  line-height: 1.3;
-  letter-spacing: 0px;
-  vertical-align: middle;
-  width: 100%;
+
+/* ==========================================================================
+   Глобальные стили + обёртка страницы
+   ========================================================================== */
+
+.main-wrapper {
+  background-color: var(--color-bg);
+  border-radius: 3.75rem; /* 60px */
+  min-width: 20rem; /* 320px */
+  max-width: 120rem; /* 1920px */
+  min-height: 50rem; /* 800px */
+  margin: 0 auto;
+  overflow: hidden;
+  font-family: var(--font-montserrat);
 }
 
-@media (max-width: 906px) {
-  .main-wrapper {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-  }
-}
-
-@media (max-width: 407px) {
-  .header__text {
-    font-size: 1.125rem;
-  }
-  .btn--orange {
-    padding: 18px 60px;
-  }
-}
-@media (max-width: 326px) {
-  .btn--orange {
-    padding: 14px 60px;
-  }
-}
-.text--orange {
+a {
   color: var(--color-orange);
 }
 
+/* Glow-анимация */
+.glow {
+  animation: subtle-glow 3.2s ease-in-out infinite;
+}
+
+@keyframes subtle-glow {
+  0%,
+  100% {
+    filter: brightness(1) saturate(1);
+  }
+  50% {
+    filter: brightness(1.15) saturate(1.08);
+  }
+}
+
+/* Оранжевая кнопка */
+.btn--orange {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem; /* 10px */
+  padding: 1.25rem 3.75rem; /* 20 / 60 */
+  width: 100%;
+  max-width: 22rem; /* 352px */
+  font-size: 1.25rem; /* 20px */
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0;
+  color: #191e1f;
+  background-color: var(--color-orange);
+  border-radius: var(--normal-border-radius); /* 20px */
+  vertical-align: middle;
+}
+
+.text--orange {
+  color: var(--color-orange);
+}
 .text--white {
   color: var(--color-white);
 }
-
 .text--red {
   color: var(--color-red);
   animation: blink 1s infinite alternate;
@@ -129,5 +112,37 @@ a {
   }
   to {
     opacity: 0.4;
+  }
+}
+
+/* ==========================================================================
+   Адаптив для .main-wrapper и .btn--orange
+   ========================================================================== */
+
+@media (max-width: 56.625rem) {
+  /* ~906px */
+  .main-wrapper {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 1.25rem; /* 20px */
+    border-bottom-right-radius: 1.25rem;
+  }
+
+  .btn--orange {
+    padding: 1.125rem 3.75rem; /* 18 / 60 */
+  }
+}
+
+@media (max-width: 25.4375rem) {
+  /* ~407px */
+  .header__text {
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 20.375rem) {
+  /* ~326px */
+  .btn--orange {
+    padding: 0.875rem 3.75rem; /* 14 / 60 */
   }
 }

@@ -1,373 +1,40 @@
+/* ==========================================================================
+   Тарифы — сетка и общие стили
+   ========================================================================== */
+
 .tariffs-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); /* 240px */
+  gap: 0.875rem; /* 14px */
 }
 
-/* Обычная карточка */
+/* ==========================================================================
+   Базовая карточка тарифа
+   ========================================================================== */
+
 .tariff-card {
-  transition: transform 0.2s ease;
-  display: flex;
-  justify-content: center;
-  /* align-items: center; */
   position: relative;
-  border-radius: 40px;
-  border-width: 2px;
-  gap: 16px;
-  padding: 70px 17px 31px;
-  background-color: var(--color-gray3);
-  border: 2px solid var(--color-gray2);
-}
-.full-width .tariff-card {
-  padding-top: 70px;
-  padding-right: 21px;
-  padding-bottom: 26px;
-  padding-left: 21px;
-}
-.tariff-card__right,
-.tariff-card__left {
-  flex: 1;
-  /* flex-direction: column; */
-  /* display: flex; */
-}
-.tariff-card__right {
-  width: 100%;
-}
-.full-width .tariff-card__left {
-  max-width: 178px;
-  min-width: 121px;
-}
-.full-width .tariff-card__right {
-  max-width: 328px;
-  min-width: 111px;
-}
-/* Самая важная карточка — во всю ширину */
-.tariff-card.full-width {
-  grid-column: 1 / -1; /* занимает всю ширину грида */
-
-  /* transform: scale(1.02); */
-}
-.full-width {
-  align-items: center;
-  /* transform: scale(1.02); */
-}
-.tariff-discount {
-  background-color: var(--color-red);
-  font-family: var(--font-gilroy);
-  letter-spacing: 0%;
-  border-bottom-right-radius: 8px;
-  border-bottom-left-radius: 8px;
-  gap: 10px;
-  padding: 4px 11px;
-  font-size: 22px;
-  font-weight: 500;
-  line-height: 1.3;
   display: flex;
-  position: absolute;
-  top: -3px;
-  left: 51px;
-}
-
-.full-width .tariff-discount {
-  top: 0;
-  left: 52px;
-  padding: 5px 7px;
-}
-
-.tariff-card.best {
-  border: 2px solid var(--color-orange);
-  border-radius: 34px;
-  border-width: 2px;
-  gap: 16px;
-  padding: 34px 80px 26px 124px;
-  background-color: var(--color-gray3);
-}
-
-/* Остальные стили остаются прежними */
-/* .tariff-card:not(.best) {
-  border: 1px solid #d1d5db;
-  background: #ffffff;
-  color: #000000;
-} */
-
-.tariff-card:hover {
-  /* transform: scale(1.03); */
-}
-
-/* Метка "Лучший выбор" */
-.best-label {
-  font-weight: 500;
-  letter-spacing: 3%;
-  color: var(--color-orange);
-  font-size: 22px;
-  line-height: 1.3;
-  position: absolute;
-  top: 10px;
-  right: 17px;
-}
-
-/* Остальные классы без изменений */
-.tariff-period {
-  font-weight: 500;
-  font-size: 26px;
-  line-height: 1.2;
-  letter-spacing: 0%;
-  text-align: center;
-}
-
-.full-width .tariff-period {
-  font-weight: 500;
-  font-style: Medium;
-  font-size: 26px;
-  line-height: 1.2;
-  letter-spacing: 0%;
-  color: var(--color-white);
-  /* padding-left: 24px; */
-}
-
-.tariff-price {
-  font-weight: 600;
-  font-style: SemiBold;
-  font-size: 50px;
-  line-height: 1;
-  letter-spacing: 0%;
-  margin-top: 27px;
-  color: var(--color-white);
-}
-
-.full-width .tariff-price {
-  font-weight: 600;
-
-  font-size: 50px;
-  color: var(--color-orange);
-  line-height: 100%;
-  letter-spacing: 0%;
-  margin-top: 17px;
-}
-.tariff-old-price {
-  font-weight: 400;
-
-  color: var(--text-discount);
-  letter-spacing: 0%;
-  text-align: right;
-  font-size: 25.5px;
-  line-height: 1.2;
-  text-decoration: line-through;
-  margin-right: 1px;
-}
-
-.full-width .tariff-old-price {
-  color: var(--text-discount);
-  letter-spacing: 0%;
-  text-align: right;
-  font-size: 25.5px;
-  font-weight: 400;
-  line-height: 1.2;
-  text-decoration: line-through;
-  padding-right: 1px;
-}
-.tariff-text {
-  font-weight: 400;
-  font-style: Regular;
-  font-size: 16px;
-  color: var(--color-white);
-  line-height: 1.3;
-  letter-spacing: 0%;
-  margin-top: 9px;
-}
-
-.full-width .tariff-text {
-  font-weight: 400;
-  font-style: Regular;
-  font-size: 16px;
-  line-height: 1.3;
-  letter-spacing: 0%;
-  color: var(--color-white);
-  margin-top: 0px;
-}
-.tariff-card__left__inner {
-  display: flex;
-  gap: 40px;
-  align-items: center;
-  flex-direction: column;
   justify-content: center;
-  width: 100%;
-}
-.full-width .tariff-card__left__inner {
-  flex-direction: unset;
-}
-.tariff-button {
-  margin-top: 24px;
-  width: 100%;
-  padding: 12px;
-  border-radius: 8px;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-.tariff-card.best .tariff-button {
-  background: #ffffff;
-  color: #4f46e5;
-}
-
-.tariff-card:not(.best) .tariff-button {
-  /* background: #4f46e5; */
-  /* color: #ffffff; */
-}
-
-.tariff-card.best .tariff-button:hover {
-  background: #f3f4f6;
-}
-
-.tariff-card:not(.best) .tariff-button:hover {
-  background: #4338ca;
-}
-
-@media (max-width: 666px) {
-  .tariffs-title {
-    font-size: 24px;
-    padding-right: 8px;
-  }
-  .tariffs-grid {
-    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
-    gap: 9px;
-  }
-  .full-width .tariff-period,
-  .tariff-period {
-    font-size: 18px;
-    text-align: left;
-  }
-  .full-width .tariff-price,
-  .tariff-price {
-    font-size: 34px;
-  }
-  .tariff-price {
-    margin-top: 15px;
-  }
-  .full-width .best-label,
-  .best-label {
-    font-size: 16px;
-    right: 12px;
-    top: 5px;
-  }
-  .full-width .tariff-discount,
-  .tariff-discount {
-    left: unset;
-    font-size: 16px;
-    right: 61px;
-    padding: 2px 5px;
-  }
-
-  .full-width .tariff-discount,
-  .tariff-discount {
-    right: 61px;
-    padding: 2px 5px;
-  }
-  .tariff-discount {
-    padding: 3px 7px;
-    right: 29px;
-  }
-  .full-width .tariff-text,
-  .tariff-text {
-    text-overflow: ellipsis;
-    font-size: 14px;
-    display: block;
-    overflow: hidden;
-    max-height: 37px;
-  }
-  .full-width .tariff-old-price,
-  .tariff-old-price {
-    font-size: 16px;
-    margin-right: 7px;
-    margin-top: -1px;
-  }
-
-  .tariff-card__left__inner {
-    flex-direction: unset;
-    gap: 45px;
-  }
-  .tariff-card.best,
-  .tariff-card {
-    padding: 20px 16px 16px 30px;
-    border-radius: 20px;
-    min-width: 121px;
-  }
-  .tariff-card {
-    grid-column: 1 / -1;
-  }
-  .tariff-card__left {
-    max-width: 178px;
-    min-width: 107px;
-  }
-  .tariff-card__right {
-    max-width: 328px;
-    min-width: 111px;
-  }
-}
-
-@media (max-width: 407px) {
-}
-@media (max-width: 326px) {
-  .tariffs-title {
-    font-size: 22px;
-  }
-  .tariff-card.best,
-  .tariff-card {
-    padding: 16px 4px 12px 20px;
-    border-radius: 20px;
-    min-width: 107px;
-  }
-  .full-width .tariff-price,
-  .tariff-price {
-    font-size: 30px;
-  }
-
-  .full-width .tariff-period,
-  .tariff-period {
-    font-size: 16px;
-  }
-  .tariff-card__left__inner {
-    /* flex-direction: unset; */
-    gap: 2px;
-  }
-  .full-width .best-label,
-  .best-label {
-    font-size: 14px;
-    top: 2px;
-    right: 17px;
-  }
-  .full-width .tariff-discount,
-  .tariff-discount {
-    padding: 2px 6px;
-    font-size: 14px;
-    right: 30px;
-  }
-  .full-width .tariff-discount {
-    right: 53px;
-    padding: 1px 4px;
-  }
-  .tariff-text {
-    margin-top: -3px;
-  }
-}
-/* TariffsGrid.css */
-.tariff-card {
-  cursor: pointer;
-  transition: all 0.18s ease;
-  border: 2px solid transparent;
+  gap: 1rem; /* 16px */
+  padding: 4.375rem 1.0625rem 1.9375rem; /* 70 / 17 / 31 */
+  border: 0.125rem solid var(--color-gray2); /* 2px */
+  border-radius: 2.5rem; /* 40px */
+  background-color: var(--color-gray3);
+  transition: transform 0.2s ease;
 }
 
 .tariff-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  transform: translateY(-0.25rem); /* -4px */
+  box-shadow: 0 0.625rem 1.5625rem rgba(0, 0, 0, 0.12); /* 10 / 25 */
+  cursor: pointer;
 }
 
+/* Состояния карточки */
 .tariff-card.selected {
-  border-color: #f97316; /* оранжевый */
-  background: rgba(249, 115, 22, 0.08);
-  box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.2);
+  border-color: #f97316 !important;
+  background: rgba(249, 115, 22, 0.08) !important;
+  box-shadow: 0 0 0 0.25rem rgba(249, 115, 22, 0.2); /* 4px */
 }
 
 .tariff-card.error-flash {
@@ -383,5 +50,302 @@
   }
   50% {
     border-color: transparent;
+  }
+}
+
+/* ==========================================================================
+   Полноширинная карточка (.full-width)
+   ========================================================================== */
+
+.full-width .tariff-card {
+  padding: 4.375rem 1.3125rem 1.625rem; /* 70 / 21 / 26 */
+}
+
+.full-width {
+  align-items: center;
+}
+
+.tariff-card.full-width {
+  grid-column: 1 / -1;
+}
+
+/* Ограничения ширины блоков в полноширинной карточке */
+.full-width .tariff-card__left {
+  max-width: 11.125rem; /* 178px */
+  min-width: 7.5625rem; /* 121px */
+}
+
+.full-width .tariff-card__right {
+  max-width: 20.5rem; /* 328px */
+  min-width: 6.9375rem; /* 111px */
+}
+
+/* ==========================================================================
+   Самая выгодная карточка (.best)
+   ========================================================================== */
+
+.tariff-card.best {
+  border: 0.125rem solid var(--color-orange); /* 2px */
+  border-radius: 2.125rem; /* 34px */
+  padding: 2.125rem 5rem 1.625rem 7.75rem; /* 34 / 80 / 26 / 124 */
+  gap: 1rem;
+  background-color: var(--color-gray3);
+}
+
+/* Метка "лучший" */
+.best-label {
+  position: absolute;
+  top: 0.625rem; /* 10px */
+  right: 1.0625rem; /* 17px */
+  font-size: 1.375rem; /* 22px */
+  line-height: 1.3;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--color-orange);
+}
+
+/* ==========================================================================
+   Элементы внутри карточки
+   ========================================================================== */
+
+.tariff-period {
+  font-size: 1.625rem; /* 26px */
+  line-height: 1.2;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.full-width .tariff-period {
+  color: var(--color-white);
+}
+
+.tariff-price {
+  margin-top: 1.6875rem; /* 27px */
+  font-size: 3.125rem; /* 50px */
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--color-white);
+}
+
+.full-width .tariff-price {
+  margin-top: 1.0625rem; /* 17px */
+  color: var(--color-orange);
+  line-height: 100%;
+}
+
+.tariff-old-price {
+  font-size: 1.59375rem; /* 25.5px */
+  line-height: 1.2;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-decoration: line-through;
+  color: var(--text-discount);
+  text-align: right;
+  margin-right: 0.0625rem; /* ~1px */
+}
+
+.full-width .tariff-old-price {
+  padding-right: 0.0625rem;
+}
+
+.tariff-text {
+  margin-top: 0.5625rem; /* 9px */
+  font-size: 1rem; /* 16px */
+  line-height: 1.3;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--color-white);
+}
+
+.full-width .tariff-text {
+  margin-top: 0;
+}
+
+/* ==========================================================================
+   Скидка (ярлык)
+   ========================================================================== */
+
+.tariff-discount {
+  position: absolute;
+  top: -0.1875rem; /* -3px */
+  left: 3.1875rem; /* 51px */
+  display: flex;
+  align-items: center;
+  gap: 0.625rem; /* 10px */
+  padding: 0.25rem 0.6875rem; /* 4 / 11 */
+  font-size: 1.375rem; /* 22px */
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: 0;
+  color: white;
+  background-color: var(--color-red);
+  border-radius: 0 0 0.5rem 0.5rem; /* 8px */
+}
+
+.full-width .tariff-discount {
+  top: 0;
+  left: 3.25rem; /* 52px */
+  padding: 0.3125rem 0.4375rem; /* 5 / 7 */
+}
+
+/* ==========================================================================
+   Левый / правый блок
+   ========================================================================== */
+
+.tariff-card__left,
+.tariff-card__right {
+  flex: 1;
+}
+
+.tariff-card__right {
+  width: 100%;
+}
+
+.tariff-card__left__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 2.5rem; /* 40px */
+}
+
+.full-width .tariff-card__left__inner {
+  flex-direction: row;
+}
+
+/* ==========================================================================
+   Медиа-запросы
+   ========================================================================== */
+
+@media (max-width: 41.625rem) {
+  /* ~666px */
+  .tariffs-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    gap: 0.5625rem; /* 9px */
+  }
+
+  .tariff-period,
+  .full-width .tariff-period {
+    font-size: 1.125rem; /* 18px */
+    text-align: left;
+  }
+
+  .tariff-price,
+  .full-width .tariff-price {
+    font-size: 2.125rem; /* 34px */
+  }
+
+  .tariff-price {
+    margin-top: 0.9375rem; /* 15px */
+  }
+
+  .best-label,
+  .full-width .best-label {
+    font-size: 1rem; /* 16px */
+    top: 0.3125rem; /* 5px */
+    right: 0.75rem; /* 12px */
+  }
+
+  .tariff-discount,
+  .full-width .tariff-discount {
+    font-size: 1rem; /* 16px */
+    padding: 0.125rem 0.3125rem; /* 2 / 5 */
+  }
+
+  .tariff-discount {
+    right: 1.8125rem; /* 29px */
+    left: auto;
+  }
+
+  .full-width .tariff-discount {
+    right: 3.8125rem; /* 61px */
+  }
+
+  .tariff-old-price,
+  .full-width .tariff-old-price {
+    font-size: 1rem; /* 16px */
+    margin-right: 0.4375rem; /* 7px */
+    margin-top: -0.0625rem;
+  }
+
+  .tariff-text,
+  .full-width .tariff-text {
+    font-size: 0.875rem; /* 14px */
+    max-height: 2.3125rem; /* 37px */
+    overflow: hidden;
+    display: block;
+    text-overflow: ellipsis;
+  }
+
+  .tariff-card,
+  .tariff-card.best {
+    padding: 1.25rem 1rem 1rem 1.875rem; /* 20/16/16/30 */
+    border-radius: var(--normal-border-radius); /* 20px */
+    min-width: 7.5625rem; /* 121px */
+  }
+
+  .tariff-card {
+    grid-column: 1 / -1;
+    border: 0.125rem solid transparent;
+    cursor: pointer;
+    transition: all 0.18s ease;
+  }
+
+  .tariff-card__left__inner {
+    flex-direction: row;
+    gap: 2.8125rem; /* 45px */
+  }
+}
+
+@media (max-width: 25.375rem) {
+  /* ~407px */
+  /* пока пусто */
+}
+
+@media (max-width: 20.375rem) {
+  /* ~326px */
+  .tariff-price,
+  .full-width .tariff-price {
+    font-size: 1.875rem; /* 30px */
+  }
+
+  .tariff-period,
+  .full-width .tariff-period {
+    font-size: 1rem; /* 16px */
+  }
+
+  .best-label,
+  .full-width .best-label {
+    font-size: 0.875rem; /* 14px */
+    top: 0.125rem; /* 2px */
+    right: 1.0625rem; /* 17px */
+  }
+
+  .tariff-discount,
+  .full-width .tariff-discount {
+    font-size: 0.875rem; /* 14px */
+    padding: 0.125rem 0.375rem; /* 2 / 6 */
+  }
+
+  .full-width .tariff-discount {
+    right: 3.3125rem; /* 53px */
+    padding: 0.0625rem 0.25rem; /* 1 / 4 */
+  }
+
+  .tariff-card,
+  .tariff-card.best {
+    padding: 1rem 0.25rem 0.75rem 1.25rem; /* 16/4/12/20 */
+    min-width: 6.6875rem; /* 107px */
+  }
+
+  .tariff-card__left__inner {
+    gap: 0.125rem; /* 2px */
+  }
+
+  .tariff-text {
+    margin-top: -0.1875rem; /* -3px */
   }
 }

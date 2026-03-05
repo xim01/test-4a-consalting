@@ -1,12 +1,17 @@
+/* ==========================================================================
+   Хедер (верхняя полоса с таймером и текстом)
+   ========================================================================== */
+
 header {
-  background-color: var(--color-green);
   width: 100%;
-  /* min-height: 103px; */
-  padding: 0.8rem 0 0;
+  padding: 0.8rem 0 0; /* ~12.8px сверху */
+  background-color: var(--color-green);
   display: flex;
-  gap: 0.35rem;
   flex-direction: column;
+  gap: 0.35rem; /* ~5.6px между блоками */
 }
+
+/* Цвет звёздочки в зависимости от цвета текста */
 .text--red .star-icon {
   color: var(--color-red);
 }
@@ -16,48 +21,71 @@ header {
 .text--orange .star-icon {
   color: var(--color-orange);
 }
+
+/* Общие стили для текстовых блоков в хедере */
 .header__text,
 .header__timer {
   display: flex;
   justify-content: center;
   text-align: center;
+  align-items: center;
 }
+
+/* Таймер (большое время + uppercase) */
 .header__timer {
-  gap: 8px;
+  gap: 0.5rem; /* 8px */
+  font-family: var(--font-raleway);
   font-size: 2.5rem;
   font-weight: 700;
   line-height: 1.1;
   text-transform: uppercase;
-  font-family: var(--font-raleway);
-  font-variant-numeric: lining-nums proportional-nums;
-  align-items: center;
-}
-.header__timer-numbers {
-  gap: 6px;
-  display: flex;
-}
-.header__text {
-  font-size: 1.5rem;
-  font-weight: 600;
-  line-height: 1.1;
-  gap: 10px;
-  color: var(--color-whie);
   font-variant-numeric: lining-nums proportional-nums;
 }
 
-@media (max-width: 407px) {
+.header__timer-numbers {
+  display: flex;
+  gap: 0.375rem; /* 6px */
+}
+
+/* Текст под/над таймером */
+.header__text {
+  gap: 0.625rem; /* 10px */
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--color-white); /* было var(--color-whie) — исправил опечатку */
+  font-variant-numeric: lining-nums proportional-nums;
+}
+
+/* Кнопка промо (центрированная) */
+.promo-btn {
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem 0; /* 8px сверху и снизу */
+}
+
+/* ==========================================================================
+   Адаптив
+   ========================================================================== */
+
+@media (max-width: 25.4375rem) {
+  /* ~407px */
   .header__text {
-    font-size: 1.125rem;
+    font-size: 1.125rem; /* 18px */
   }
+
   .header__timer {
-    font-size: 2rem;
+    font-size: 2rem; /* 32px */
   }
 }
-@media (max-width: 326px) {
+
+@media (max-width: 20.375rem) {
+  /* ~326px */
   .header__text {
-    font-size: 14px;
+    font-size: 0.875rem; /* 14px */
   }
+
   .header__timer {
-    font-size: 28px;
+    font-size: 1.75rem; /* 28px */
   }
 }

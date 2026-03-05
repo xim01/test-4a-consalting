@@ -23,4 +23,8 @@
   --color-white: #fff;
   --font-raleway: "Raleway", system-ui, sans-serif;
   --font-gilroy: "Gilroy", sans-serif;
+
+  /* Правиьлно унифицирывать все размеры но и так слишком большое тестовое получилось */
+  --normal-border-radius: 1.25rem;
+  --big-border-radius: 1.875rem;
 }

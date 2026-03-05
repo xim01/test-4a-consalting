@@ -24,7 +24,6 @@ export default function Breadcrumbs() {
           const href = "/" + pathSegments.slice(0, index + 1).join("/");
           const isLast = index === pathSegments.length - 1;
 
-          // Делаем читаемое название (можно потом заменить на словарь)
           const label = segment.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase());
 
           return (

@@ -1,66 +1,82 @@
-/* src/app/tariffs/tariffs.css */
+/* ==========================================================================
+   Страница тарифов (tariffs.css)
+   ========================================================================== */
+
 .tariffs-container {
+  display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 1302px;
+  max-width: 81.375rem; /* 1302px */
   margin: 0 auto;
-  padding-top: 23px;
-  display: flex;
-  padding-left: 43px;
-  padding-right: 43px;
+  padding: 1.4375rem 2.6875rem 0; /* 23 / 43 */
 }
+
 .tariffs-container .tariffs-mid-container {
-  margin-top: 83px;
+  margin-top: 5.1875rem; /* 83px */
 }
+
 .tariffs-mid-container {
   display: flex;
-  /* align-items: center; */
   justify-content: center;
   width: -moz-available;
+  width: stretch; /* современный аналог -moz-available */
 }
+
 .tariffs-mid-container__left {
   width: 38.4%;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
+}
 
-  /* height: fit-content; */
-}
 .tariffs-mid-container__left img {
-  margin-top: 11px;
-  margin-left: -43px;
   position: relative;
+  margin-top: 0.6875rem; /* 11px */
+  margin-left: -2.6875rem; /* -43px */
 }
+
 .tariffs-mid-container__right {
   flex: 1;
 }
+
 .tariffs-mid-container__right .card-2 {
-  margin-top: 20px;
+  margin-top: 1.25rem; /* 20px */
 }
+
 .tariffs-mid-container__right .card-3 {
-  margin-top: 15px;
+  margin-top: 0.9375rem; /* 15px */
 }
+
 .tariffs-title {
-  font-size: 2.5rem;
-  color: var(--color-white);
-  font-family: Montserrat;
-  font-weight: 700;
-  font-style: Bold;
   width: 100%;
+  font-family: Montserrat, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
   line-height: 1.1;
-  letter-spacing: 1%;
+  letter-spacing: 0.01em;
+  color: var(--color-white);
 }
+
+.tariffs-big-container {
+  width: 100%;
+  margin: 4rem 0 9.375rem; /* 64 / 150 */
+}
+
+.tariffs-accepet-btn-wrapper {
+  margin-top: 0.9375rem; /* 15px */
+}
+
+/* Состояния загрузки / ошибок / пусто */
 .loading,
 .error,
 .empty {
   text-align: center;
-  padding: 40px 0;
+  padding: 2.5rem 0; /* 40px */
 }
 
 .error {
   color: red;
 }
-
 .empty {
   color: #555;
 }
@@ -70,57 +86,64 @@
   opacity: 0.8;
 }
 
-.tariffs-big-container {
-  width: 100%;
-  margin-top: 64px;
-  margin-bottom: 150px;
-}
-.tariffs-accepet-btn-wrapper {
-  margin-top: 15px;
-}
-@media (max-width: 1200px) {
+/* ==========================================================================
+   Медиа-запросы для тарифов
+   ========================================================================== */
+
+@media (max-width: 75rem) {
+  /* ~1200px — пока пусто */
 }
 
-@media (max-width: 906px) {
+@media (max-width: 56.625rem) {
+  /* ~906px */
   .tariffs-mid-container {
     flex-direction: column;
   }
+
   .tariffs-mid-container__left {
     width: 100%;
     padding: 0 5.6875rem;
   }
+
   .tariffs-mid-container__left img {
     margin-top: 0;
     margin-left: 0;
   }
 }
-@media (max-width: 666px) {
+
+@media (max-width: 41.625rem) {
+  /* ~666px */
   .tariffs-container {
-    padding-top: 1px;
+    padding-top: 0.0625rem; /* 1px */
   }
+
   .tariffs-container .tariffs-mid-container {
-    margin-top: -26px;
+    margin-top: -1.625rem; /* -26px */
   }
 }
-@media (max-width: 407px) {
+
+@media (max-width: 25.4375rem) {
+  /* ~407px */
   .tariffs-container {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding: 0 1rem; /* 16px */
   }
+
   .tariffs-big-container {
-    margin-top: 21px;
-    margin-bottom: 27px;
+    margin: 1.3125rem 0 1.6875rem; /* 21 / 27 */
   }
 }
-@media (max-width: 326px) {
+
+@media (max-width: 20.375rem) {
+  /* ~326px */
   .tariffs-mid-container__left {
-    width: 100%;
     padding: 0 4.8rem;
   }
+
   .tariffs-mid-container__right .card-2 {
-    margin-top: 13px;
+    margin-top: 0.8125rem; /* 13px */
   }
+
   .tariffs-big-container {
-    margin-bottom: 17px;
+    margin-bottom: 1.0625rem; /* 17px */
   }
 }

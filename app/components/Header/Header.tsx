@@ -14,8 +14,8 @@ import SvgStar from "./svg/SvgStar";
 
 export default function Header() {
   //component settings
-  const redTime = 15;
-  const time = 30;
+  const redTime = 5;
+  const time = 10;
   const textButton = "Запустить";
   const HEADER_TEXT = "Успейте открыть пробную неделю";
 
@@ -89,7 +89,7 @@ export default function Header() {
       </div>
 
       {!isActive && (
-        <div style={{ textAlign: "center", marginTop: "0.5rem" }}>
+        <div className={"promo-btn"}>
           <button onClick={() => dispatch(startPromoTimer(time))} style={{}} className="btn--orange">
             {textButton}
           </button>

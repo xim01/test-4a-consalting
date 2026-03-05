@@ -1,54 +1,48 @@
-/* src/components/AcceptForm.css */
+/* ==========================================================================
+   Accept Form (чекбокс согласия)
+   ========================================================================== */
 
 .accept-form {
-  cursor: pointer;
-  -webkit-user-select: none;
-  user-select: none;
+  display: flex;
   align-items: flex-start;
-  gap: 12px;
-  margin-top: 33px;
+  gap: 0.75rem; /* 12px */
+  margin-top: 2.0625rem; /* 33px */
+  margin-left: 0.125rem; /* 2px */
   font-size: 1rem;
   line-height: 1.4;
-  display: flex;
-  max-width: 665px;
-  margin-left: 2px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  max-width: 41.5625rem; /* 665px */
 }
 
-/* Скрываем стандартный чекбокс */
 .accept-checkbox {
   position: absolute;
-  opacity: 0;
   width: 0;
   height: 0;
+  opacity: 0;
 }
 
-/* Кастомный квадрат чекбокса */
 .custom-checkbox {
-  width: 32px;
-  height: 32px;
-  min-width: 32px;
-  border: 1px solid #606566;
-  border-radius: 4px;
-
-  position: relative;
-  transition: all 0.2s ease;
   flex-shrink: 0;
+  width: 2rem; /* 32px */
+  height: 2rem;
+  min-width: 2rem;
+  border: 0.0625rem solid #606566; /* 1px */
+  border-radius: 0.25rem; /* 4px */
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-/* Галочка внутри — изначально скрыта */
-.check-icon {
-  width: 18px;
-  height: 12px;
-  opacity: 0;
-  transform: scale(0.6);
+  position: relative;
   transition: all 0.2s ease;
 }
 
-/* Когда чекбокс отмечен */
-.accept-checkbox:checked + .custom-checkbox {
+.check-icon {
+  width: 1.125rem; /* 18px */
+  height: 0.75rem; /* 12px */
+  opacity: 0;
+  transform: scale(0.6);
+  transition: all 0.2s ease;
 }
 
 .accept-checkbox:checked + .custom-checkbox .check-icon {
@@ -56,54 +50,29 @@
   transform: scale(1);
 }
 
-/* Текст согласия */
 .accept-text {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1rem; /* 16px */
   line-height: 1.1;
-  letter-spacing: 0%;
+  letter-spacing: 0;
   vertical-align: bottom;
 }
+
 .accept-text a {
   text-decoration: underline;
 }
-/* Hover-эффект (опционально) */
+
+/* Взаимодействие */
 .accept-form:hover .custom-checkbox {
   border-color: #a0a0a0;
 }
 
-/* Фокус для доступности */
 .accept-checkbox:focus-visible + .custom-checkbox {
-  outline: 2px solid #4f46e5;
-  outline-offset: 2px;
+  outline: 0.125rem solid #4f46e5; /* 2px */
+  outline-offset: 0.125rem;
 }
-@media (max-width: 407px) {
-  .accept-form {
-    margin-top: 26px;
-    margin-left: 0px;
-  }
-  .accept-text {
-    padding-left: 2px;
-    font-size: 12px;
-  }
-  .custom-checkbox {
-    width: 29px;
-    height: 29px;
-  }
-  .tariffs-accepet-btn-wrapper {
-    margin-top: 21px;
-  }
-}
-@media (max-width: 326px) {
-  .accept-form {
-    margin-top: 19px;
-    margin-left: 0;
-    gap: 7px;
-  }
-  .tariffs-accepet-btn-wrapper {
-    margin-top: 19px;
-  }
-}
+
+/* Ошибка */
 .accept-form.has-error .custom-checkbox {
   border-color: #ef4444 !important;
   background: rgba(239, 68, 68, 0.1);
@@ -111,4 +80,39 @@
 
 .accept-form.has-error .accept-text {
   color: #ef4444;
+}
+
+@media (max-width: 25.4375rem) {
+  /* ~407px */
+  .accept-form {
+    margin-top: 1.625rem; /* 26px */
+    margin-left: 0;
+  }
+
+  .accept-text {
+    padding-left: 0.125rem; /* 2px */
+    font-size: 0.75rem; /* 12px */
+  }
+
+  .custom-checkbox {
+    width: 1.8125rem; /* 29px */
+    height: 1.8125rem;
+  }
+
+  .tariffs-accepet-btn-wrapper {
+    margin-top: 1.3125rem; /* 21px */
+  }
+}
+
+@media (max-width: 20.375rem) {
+  /* ~326px */
+  .accept-form {
+    margin-top: 1.1875rem; /* 19px */
+    margin-left: 0;
+    gap: 0.4375rem; /* 7px */
+  }
+
+  .tariffs-accepet-btn-wrapper {
+    margin-top: 1.1875rem; /* 19px */
+  }
 }
