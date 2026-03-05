@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 
-export default function ImgBlock({ isPromoActive }) {
+export default function ImgBlock({ isPromoActive }: { isPromoActive: boolean }) {
   return (
     <AnimatePresence mode="wait">
       {isPromoActive ? (
@@ -12,7 +12,7 @@ export default function ImgBlock({ isPromoActive }) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.7, ease: "easeInOut" }}
-          className="promo-image" // если нужно задать размеры/позицию
+          className="promo-image"
         />
       ) : (
         <motion.img

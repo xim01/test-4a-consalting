@@ -32,7 +32,7 @@ export default function TariffsGrid({
       y: 0,
       scale: 1,
       transition: {
-        delay: custom * 0.05,
+        delay: custom * 0.1,
         duration: 0.4,
         ease: [0.4, 0, 0.2, 1],
       },
