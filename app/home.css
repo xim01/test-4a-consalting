@@ -1,0 +1,12 @@
+.home-content {
+  padding: 43px;
+}
+.home-content h1 {
+  text-align: center;
+  font-size: 40px;
+  color: var(--color-orange);
+}
+.home-content p {
+  font-size: 24px;
+  color: var(--color-white);
+}

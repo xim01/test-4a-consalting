@@ -1,0 +1,126 @@
+/* src/app/tariffs/tariffs.css */
+.tariffs-container {
+  flex-direction: column;
+  align-items: center;
+  max-width: 1302px;
+  margin: 0 auto;
+  padding-top: 23px;
+  display: flex;
+  padding-left: 43px;
+  padding-right: 43px;
+}
+.tariffs-container .tariffs-mid-container {
+  margin-top: 83px;
+}
+.tariffs-mid-container {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  width: -moz-available;
+}
+.tariffs-mid-container__left {
+  width: 38.4%;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+
+  /* height: fit-content; */
+}
+.tariffs-mid-container__left img {
+  margin-top: 11px;
+  margin-left: -43px;
+  position: relative;
+}
+.tariffs-mid-container__right {
+  flex: 1;
+}
+.tariffs-mid-container__right .card-2 {
+  margin-top: 20px;
+}
+.tariffs-mid-container__right .card-3 {
+  margin-top: 15px;
+}
+.tariffs-title {
+  font-size: 2.5rem;
+  color: var(--color-white);
+  font-family: Montserrat;
+  font-weight: 700;
+  font-style: Bold;
+  width: 100%;
+  line-height: 1.1;
+  letter-spacing: 1%;
+}
+.loading,
+.error,
+.empty {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.error {
+  color: red;
+}
+
+.empty {
+  color: #555;
+}
+
+.empty small {
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
+
+.tariffs-big-container {
+  width: 100%;
+  margin-top: 64px;
+  margin-bottom: 150px;
+}
+.tariffs-accepet-btn-wrapper {
+  margin-top: 15px;
+}
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 906px) {
+  .tariffs-mid-container {
+    flex-direction: column;
+  }
+  .tariffs-mid-container__left {
+    width: 100%;
+    padding: 0 5.6875rem;
+  }
+  .tariffs-mid-container__left img {
+    margin-top: 0;
+    margin-left: 0;
+  }
+}
+@media (max-width: 666px) {
+  .tariffs-container {
+    padding-top: 1px;
+  }
+  .tariffs-container .tariffs-mid-container {
+    margin-top: -26px;
+  }
+}
+@media (max-width: 407px) {
+  .tariffs-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .tariffs-big-container {
+    margin-top: 21px;
+    margin-bottom: 27px;
+  }
+}
+@media (max-width: 326px) {
+  .tariffs-mid-container__left {
+    width: 100%;
+    padding: 0 4.8rem;
+  }
+  .tariffs-mid-container__right .card-2 {
+    margin-top: 13px;
+  }
+  .tariffs-big-container {
+    margin-bottom: 17px;
+  }
+}

@@ -1,0 +1,114 @@
+/* src/components/AcceptForm.css */
+
+.accept-form {
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 33px;
+  font-size: 1rem;
+  line-height: 1.4;
+  display: flex;
+  max-width: 665px;
+  margin-left: 2px;
+}
+
+/* Скрываем стандартный чекбокс */
+.accept-checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Кастомный квадрат чекбокса */
+.custom-checkbox {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  border: 1px solid #606566;
+  border-radius: 4px;
+
+  position: relative;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Галочка внутри — изначально скрыта */
+.check-icon {
+  width: 18px;
+  height: 12px;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: all 0.2s ease;
+}
+
+/* Когда чекбокс отмечен */
+.accept-checkbox:checked + .custom-checkbox {
+}
+
+.accept-checkbox:checked + .custom-checkbox .check-icon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Текст согласия */
+.accept-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.1;
+  letter-spacing: 0%;
+  vertical-align: bottom;
+}
+.accept-text a {
+  text-decoration: underline;
+}
+/* Hover-эффект (опционально) */
+.accept-form:hover .custom-checkbox {
+  border-color: #a0a0a0;
+}
+
+/* Фокус для доступности */
+.accept-checkbox:focus-visible + .custom-checkbox {
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
+}
+@media (max-width: 407px) {
+  .accept-form {
+    margin-top: 26px;
+    margin-left: 0px;
+  }
+  .accept-text {
+    padding-left: 2px;
+    font-size: 12px;
+  }
+  .custom-checkbox {
+    width: 29px;
+    height: 29px;
+  }
+  .tariffs-accepet-btn-wrapper {
+    margin-top: 21px;
+  }
+}
+@media (max-width: 326px) {
+  .accept-form {
+    margin-top: 19px;
+    margin-left: 0;
+    gap: 7px;
+  }
+  .tariffs-accepet-btn-wrapper {
+    margin-top: 19px;
+  }
+}
+.accept-form.has-error .custom-checkbox {
+  border-color: #ef4444 !important;
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.accept-form.has-error .accept-text {
+  color: #ef4444;
+}

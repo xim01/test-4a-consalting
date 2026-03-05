@@ -1,0 +1,26 @@
+:root {
+  /* color */
+  /* --main-color: #0f1321; */
+  --background: #d2d5d5;
+  --foreground: #ffffff;
+  --size: 16px;
+  --text-main: #dcdcdc;
+
+  --text-small: #9b9b9b;
+  --tetx-accept: #cdcdcd;
+  --text-discount: #919191;
+
+  --color-bg: #232829;
+  --color-green: #1d5b43;
+  --color-lime: #81fe95;
+  --color-orange: #fdb056;
+  --color-orange-timer: #ffbb00;
+  --color-gray: #2d3233;
+  --color-gray2: #484d4e;
+  --color-gray3: #313637;
+  --color-red: #fd5656;
+
+  --color-white: #fff;
+  --font-raleway: "Raleway", system-ui, sans-serif;
+  --font-gilroy: "Gilroy", sans-serif;
+}
